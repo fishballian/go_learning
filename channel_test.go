@@ -18,3 +18,16 @@ func TestReadWriteChan(t *testing.T) {
 	time.Sleep(time.Second)
 	t.Log(rw.Get())
 }
+
+func TestSelectSend(t *testing.T) {
+	ch := make(chan int, 3)
+	ch <- 1
+	ch <- 1
+	ch <- 1
+	select {
+	case ch <- 1:
+		t.Log("send")
+	default:
+		t.Log("default")
+	}
+}
