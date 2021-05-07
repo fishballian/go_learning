@@ -1,4 +1,4 @@
-module gitee.com/fishballian/go_learning
+module go_learning
 
 go 1.14
 
